@@ -1,0 +1,144 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+
+    box-sizing: border-box;
+    padding: 16px;
+}
+h2 {
+    color: #333;
+}
+h3 {
+    color: #333;
+}
+p {
+    color: #333;
+}
+table {
+    color: #333;
+}
+.addressAndConytactDetailsHolder {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+.addressAndConytactDetailsHolder p {
+    margin: 4px 0;
+}
+.logoAndPurchaseOrderHolder {
+    width: 50%;
+    text-align: right;
+    display: inline-block;
+    vertical-align: top;
+}
+.logoholder {
+    text-align: right;
+    width: 100%;
+}
+.logo {
+    width: 300px;
+    height: auto;
+}
+.invoicDescriptionTable {
+    display: table;
+    width: 100%;
+    margin-top: 32px;
+    border-collapse: collapse;
+    border: 1px solid #999; 
+}
+
+.invoicDescriptionTable .tableCell:nth-child(odd) {
+    text-align: right;
+    background-color: #3535C0;
+    color: #fff;
+}
+
+.contentTable {
+    display: table;
+    width: 100%;
+    margin-top: 32px;
+    border-collapse: collapse;
+    border: 1px solid #999;
+    text-align: center; 
+}
+
+.contentTable .tableRow:first-child .tableCell {
+    background-color: #3535C0;
+    color: #fff;
+}
+
+.tableRow {
+    display: table-row;
+    border: 1px solid #999;
+}
+.tableCell {
+    display: table-cell;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    padding: 16px;
+    color: #333;
+}
+
+.tableCellNoBorder {
+    border: none;
+}
+
+.tableCellNoHighlight {
+    background-color: #fff !important;
+    color: #333 !important;
+}
+
+.tableCellNoPadding {
+    padding: 0;
+}
+
+.grandTotalHolder {
+    border: 1px solid #999;
+    width: calc(100% - 1px);
+    margin-top: 32px;
+}
+
+.pleasePayBy {
+    width: 33.333%;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 16px;
+    color: #333;
+}
+
+.rightSideTotalsHolder {
+    width: 66.5%;
+    width: calc(66.666% - 1px);
+    display: inline-block;
+    text-align: center;
+    border-left: 1px solid #999;
+}
+
+.rightSideTotalP {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 16px;
+    vertical-align: top;
+    margin: 0;
+    border-top: 1px solid #999;
+}
+
+.rightSideTotalP:nth-child(1) {
+    border-top: none;
+}
+
+.rightSideTotalP:nth-child(2) {
+    border-top: none;
+}
+
+.rightSideTotalP:nth-child(odd) {
+    border-right: 1px solid #999;
+}
+
+.highlightMePlease {
+    background-color: #3535C0;
+    color: #fff;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "create-invoice",
+  "version": "0.0.1",
+  "description": "Node task to create a pdf invoice using wkhtmltopdf",
+  "author": "Himanshu <himanshurs88@gmail.com>",
+  "devDependencies": {
+    "wrench": "~1.5.8",
+    "wkhtmltopdf": "~0.1.5"
+  }
+}

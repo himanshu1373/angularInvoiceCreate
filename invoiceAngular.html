@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="$1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>invoice template</title>
+        <link rel="stylesheet" href="ngApp/assets/css/style.css">
+    </head>
+    <body ng-app="invoiceApp" ng-controller="InvoiceCtrl">
+        <div class="logoholder">    
+            <img src="ngApp/assets/img/invoiceLogo.png" class="logo">
+        </div>
+        <div class="addressAndConytactDetailsHolder">
+            <h2>{{ globalModel.companyName }}</h2>
+            <p ng-repeat="addressLine in globalModel.comapnyAddress">{{ addressLine }}</p>
+            <br>
+            <p>Account details: {{ globalModel.bankName }}</p>
+            <p>Account Name: {{ globalModel.accountName }}</p>
+            <p>Account Number: {{ globalModel.accountNumber }}</p>
+            <p>Sort Code: {{ globalModel.accountsortCode }}</p>
+
+        </div><div class="logoAndPurchaseOrderHolder">
+            <h2>Purchase order: {{ model.purchaseOrderId }}</h2>
+        </div>
+        <div class="invoicDescriptionTable">
+            <div class="tableRow">
+                <div class="tableCell">To</div>
+                <div class="tableCell">Attention of {{ model.nameAndEmail }}</div>
+                <div class="tableCell">Invoice Number</div>
+                <div class="tableCell">{{ model.invoiceNumber }}</div>
+            </div>
+            <div class="tableRow">
+                <div class="tableCell">For</div>
+                <div class="tableCell">{{ model.invoiceDescription }}</div>
+                <div class="tableCell">Invoice Date</div>
+                <div class="tableCell">{{ model.invoiceDate }}</div>
+            </div>
+        </div>
+        <div class="contentTable">
+            <div class="tableRow">
+                <div class="tableCell">Date</div>
+                <div class="tableCell">Time Worked</div>
+                <div class="tableCell">Hours</div>
+                <div class="tableCell">Day Rate</div>
+                <div class="tableCell">Total</div>
+            </div>
+            
+            <div ng-repeat="workItem in model.workBreakDown" class="tableRow">
+                <div class="tableCell">{{workItem.date}}</div>
+                <div class="tableCell">{{ (workItem.timeWorkedInHours == 8) ? 'Full Day' : 'Part Day' }}</div>
+                <div class="tableCell">{{workItem.timeWorkedInHours}}</div>
+                <div class="tableCell">{{workItem.dayRate | currency: "£" : 2}}</div>
+                <div class="tableCell">{{((workItem.dayRate / 8) * workItem.timeWorkedInHours) | currency: "£" : 2}}</div>
+            </div>
+
+        </div>
+        <div class="grandTotalHolder">
+            <p class="pleasePayBy">Please pay this invoice within 30 days of invoice date</p><div class="rightSideTotalsHolder">
+                <p class="rightSideTotalP">Total Hours</p><p class="rightSideTotalP">{{ getTotalHours() }}</p>
+                <p class="rightSideTotalP">VAT charged @ 20%</p><p class="rightSideTotalP">{{ globalModel.vatCharged ? (getVatDue()  | currency: "£" : 2) : 'NIL' }}</p>
+                <p class="rightSideTotalP highlightMePlease">TOTAL AMOUNT DUE</p><p class="rightSideTotalP">{{ getTotalAmountDue() | currency: "£" : 2}}</p>
+            </div>
+        </div>
+
+        <script src="ngApp/scripts/vendors/angular.min.js"></script>
+        <script src="ngApp/scripts/vendors/angular-route.js"></script>
+        <script src="ngApp/scripts/invoiceApp.js"></script>
+    </body>
+</html>
